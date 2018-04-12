@@ -219,7 +219,7 @@ Exercise 8: Create a new event called publish to signal that all
 stories should be published. The event should be a unit WEvent.event.
 ......................................................................*)
 
-let publish = WEvent.new_event () ;;
+let publish = failwith "not imp" ;;
 
 (*......................................................................
 Exercise 9: Write a function receive_report to handle new news
@@ -230,7 +230,13 @@ by registering appropriate listeners, one for each news network,
 waiting for the publish event.
 ......................................................................*)
 
-let receive_report = fun _ -> failwith "report not implemented";;
+let receive_report (s : string) : unit = failwith "not imp" ;;
+(*   let c = WEvent.add_listener publish s in
+  let a = WEvent.add_listener publish fakeNewsNetwork in
+  let b = WEvent.add_listener publish buzzFake in
+  WEvent.fire_event publish ;;
+ *)
+
 
 (*......................................................................
 Exercise 10: Register the receieve_report listener to listen for the
